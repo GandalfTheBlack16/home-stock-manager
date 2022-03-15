@@ -12,7 +12,7 @@
     <artifactId>home-stock-manager-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>application</name>
-    <description>application</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
