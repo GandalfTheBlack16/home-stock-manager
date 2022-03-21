@@ -1,4 +1,4 @@
-package org.gandalftheblack.homestockmanager.items;
+package org.gandalftheblack.homestockmanager.item;
 
 import lombok.Data;
 
@@ -28,5 +28,9 @@ public class Item {
 
     public boolean hasStocks(){
         return stocks > 0;
+    }
+
+    public void replenish(int quantity){
+        this.stocks += quantity;
     }
 }

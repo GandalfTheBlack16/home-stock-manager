@@ -1,4 +1,4 @@
-package org.gandalftheblack.homestockmanager.items;
+package org.gandalftheblack.homestockmanager.item;
 
 import lombok.Data;
 

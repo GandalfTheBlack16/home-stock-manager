@@ -1,6 +1,8 @@
-package org.gandalftheblack.homestockmanager.items;
+package org.gandalftheblack.homestockmanager.item;
 
 import lombok.Data;
+import org.gandalftheblack.homestockmanager.user.Role;
+import org.gandalftheblack.homestockmanager.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +13,15 @@ public class ShoppingList {
 
     private UUID id;
     protected List<LineItem> items;
-    //TODO: replace with actual POJO
-    private String owner;
+    private User owner;
     private boolean active;
     private boolean _private;
 
-    public ShoppingList(String owner) {
+    public ShoppingList(User owner) {
         this.id = UUID.randomUUID();
         items = new ArrayList<>();
         this.owner = owner;
-        active = true;
+        active = false;
         _private = true;
     }
 
@@ -28,5 +29,15 @@ public class ShoppingList {
         if (item.isValid())
             return items.add(item);
         return false;
+    }
+
+    public boolean deleteItem(LineItem item){
+        return items.remove(item);
+    }
+
+    public void create(){
+        this.active = true;
+        this.owner.setRole(Role.OWNER);
+        //TODO: send listCreated event
     }
 }
