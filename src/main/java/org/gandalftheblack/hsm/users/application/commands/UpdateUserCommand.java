@@ -1,10 +1,12 @@
 package org.gandalftheblack.hsm.users.application.commands;
 
-import org.gandalftheblack.hsm.users.domain.user.Role;
+import org.gandalftheblack.hsm.users.domain.Role;
 
-public class UpdateUserCommand <T> {
+import java.util.UUID;
 
-    private T userId;
+public class UpdateUserCommand {
+
+    private UUID userId;
     private String name;
     private String email;
     private String password;
@@ -12,11 +14,11 @@ public class UpdateUserCommand <T> {
 
     public UpdateUserCommand() {}
 
-    public T userId() {
+    public UUID userId() {
         return userId;
     }
 
-    public UpdateUserCommand<T> setUserId(T userId) {
+    public UpdateUserCommand setUserId(UUID userId) {
         this.userId = userId;
         return this;
     }

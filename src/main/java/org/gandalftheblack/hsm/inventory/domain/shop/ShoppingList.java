@@ -2,8 +2,8 @@ package org.gandalftheblack.hsm.inventory.domain.shop;
 
 import lombok.Data;
 import org.gandalftheblack.hsm.inventory.domain.item.LineItem;
-import org.gandalftheblack.hsm.users.domain.user.Role;
-import org.gandalftheblack.hsm.users.domain.user.User;
+import org.gandalftheblack.hsm.users.domain.Role;
+import org.gandalftheblack.hsm.users.domain.User;
 
 
 import java.util.ArrayList;

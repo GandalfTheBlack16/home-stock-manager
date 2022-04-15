@@ -1,4 +1,4 @@
-package org.gandalftheblack.hsm.users.domain.user;
+package org.gandalftheblack.hsm.users.domain;
 
 import lombok.Data;
 

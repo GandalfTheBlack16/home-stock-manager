@@ -1,8 +1,9 @@
 package org.gandalftheblack.hsm.users.application.repository;
 
-import org.gandalftheblack.hsm.users.domain.user.User;
+import org.gandalftheblack.hsm.users.domain.User;
 
-import java.util.UUID;
+public interface UserWriteRepository {
 
-public interface UserWriteRepository extends AbstractWriteRepository<User, UUID>{
+    void save(User user);
+    void alter(User user);
 }

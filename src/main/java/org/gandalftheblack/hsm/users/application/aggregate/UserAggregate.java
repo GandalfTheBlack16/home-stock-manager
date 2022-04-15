@@ -6,7 +6,7 @@ import org.gandalftheblack.hsm.users.application.commands.GetUserByMailCommand;
 import org.gandalftheblack.hsm.users.application.commands.UpdateUserCommand;
 import org.gandalftheblack.hsm.users.application.repository.UserQueryRepository;
 import org.gandalftheblack.hsm.users.application.repository.UserWriteRepository;
-import org.gandalftheblack.hsm.users.domain.user.User;
+import org.gandalftheblack.hsm.users.domain.User;
 
 import java.util.UUID;
 
@@ -26,7 +26,7 @@ public class UserAggregate {
                 command.email(),
                 command.password()
         );
-        userWriteRepository.save(user, user.getId());
+        userWriteRepository.save(user);
         return user;
     }
 
@@ -44,14 +44,14 @@ public class UserAggregate {
         return userQueryRepository.getUser(user);
     }
 
-    public User handleUserUpdate(UpdateUserCommand<UUID> command){
+    public User handleUserUpdate(UpdateUserCommand command){
         User user = new User(
             command.name(),
             command.email(),
             command.password()
         );
         user.setId(command.userId());
-        userWriteRepository.alter(user, user.getId());
+        userWriteRepository.alter(user);
         return user;
     }
 }
